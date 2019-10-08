@@ -5,8 +5,8 @@ package Singleton;
  */
 public class Singleton3 {
   private Singleton3(){}
-  private static class Single extends Singleton3{
-    public static Singleton3 singleton3 = new Singleton3();
+  private static class Single {
+    private static Singleton3 singleton3 = new Singleton3();
   }
 
   public static Singleton3 getSinleton3(){
