@@ -78,9 +78,28 @@ public class Sort {
     return sort;
   }
 
+  public static int[] shell(int[] sort) {
+    int length = sort.length;
+    length = length / 2;
+    while (length >= 1) {
+      for (int i = length; i < sort.length; i++) {
+        int num = sort[i];
+        int j = i - length;
+        while (j >= 0 && num < sort[j]) {
+          int tmp = sort[j + length];
+          sort[j + length] = sort[j];
+          sort[j] = tmp;
+          j = j - length;
+        }
+      }
+      length = length / 2;
+    }
+    return sort;
+  }
+
   public static void main(String[] args) {
-    int[] a = {1, 4, 6, 2,5, 3, 7, 9, 8};
-    int[] b = guibing(a);
+    int[] a = {1, 4, 6, 2, 5, 3, 7, 9, 8};
+    int[] b = shell(a);
     for (int i : b) System.out.println(i);
   }
 }
