@@ -78,7 +78,7 @@ public class Sort {
     return sort;
   }
 
-  public static int[] shell(int[] sort) {
+  public static void shell(int[] sort) {
     int length = sort.length;
     length = length / 2;
     while (length >= 1) {
@@ -94,12 +94,11 @@ public class Sort {
       }
       length = length / 2;
     }
-    return sort;
   }
 
   public static void main(String[] args) {
     int[] a = {1, 4, 6, 2, 5, 3, 7, 9, 8};
-    int[] b = shell(a);
-    for (int i : b) System.out.println(i);
+    shell(a);
+    for (int i : a) System.out.println(i);
   }
 }
